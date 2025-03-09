@@ -156,8 +156,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         {
           type: 'text',
           text: JSON.stringify({ 
-            image_urls,
-            local_paths: localPaths
+            local_paths: localPaths,
+            image_urls
           }, null, 2),
         },
       ],
