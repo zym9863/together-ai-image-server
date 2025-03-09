@@ -9,6 +9,7 @@ import {
 import axios from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as os from 'os';
 import { promisify } from 'util';
 import { createHash } from 'crypto';
 
@@ -17,7 +18,7 @@ if (!API_KEY) {
   throw new Error('TOGETHER_API_KEY environment variable is required');
 }
 
-const CACHE_DIR = path.join(process.cwd(), 'images');
+const CACHE_DIR = path.join(os.tmpdir(), 'imagen-cache');
 
 function ensureCacheDir() {
   if (!fs.existsSync(CACHE_DIR)) {
@@ -156,7 +157,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           type: 'text',
           text: JSON.stringify({ 
             image_urls,
-            local_paths: localPaths.map(p => path.relative(process.cwd(), p))
+            local_paths: localPaths
           }, null, 2),
         },
       ],
