@@ -4,6 +4,10 @@ English | [简体中文](README_zh.md)
 
 A TypeScript-based MCP (Model Context Protocol) server for generating images using Together AI API.
 
+<a href="https://glama.ai/mcp/servers/p1ctvg1l87">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/p1ctvg1l87/badge" alt="Together AI Image Server MCP server" />
+</a>
+
 ## Overview
 
 This server provides a simple interface to generate images using Together AI's image generation models through the MCP protocol. It allows Claude and other MCP-compatible assistants to generate images based on text prompts.
